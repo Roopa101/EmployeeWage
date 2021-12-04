@@ -8,25 +8,25 @@ namespace EmployeeeWage
 {
     public interface IComputeEmpWage
     {
-        void addCompanyEmpWage(string company, int ratePerHrs, int NO_OF_WORKING_Days, int MAX_HRS_IN_Month);
-        void ComputeEmpWage();
-
+        public void addCompanyEmpWage(string company, int ratePerHrs, int NO_OF_WORKING_Days, int maxHoursPerMonth);
+        public void ComputeEmpWage();
+        public int getTotalWage(string company);
 
     }
     public class CompanyEmpWage
     {
         public string company;
-        public int empRatePerHour;
-        public int numOfWorkingDays;
-        public int maxHoursPerMonth;
+        public int ratePerHrs;
+        public int NO_OF_WORKING_Days;
+        public int MAX_HRS_IN_Month;
         public int totalEmpWage;
 
-        public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        public CompanyEmpWage(string company, int ratePerHrs, int NO_OF_WORKING_Days, int MAX_HRS_IN_Month)
         {
             this.company = company;
-            this.empRatePerHour = empRatePerHour;
-            this.numOfWorkingDays = numOfWorkingDays;
-            this.maxHoursPerMonth = maxHoursPerMonth;
+            this.ratePerHrs = ratePerHrs;
+            this.NO_OF_WORKING_Days = NO_OF_WORKING_Days;
+            this.MAX_HRS_IN_Month = MAX_HRS_IN_Month;
 
         }
         public void SetTotalEmpWage(int totalEmpWage)
@@ -35,7 +35,7 @@ namespace EmployeeeWage
         }
         public string toString()
         {
-            return "Total Employee wage for company  "  + this.company + "  is  " + this.totalEmpWage;
+            return "Total Employee wage for company" + this.company + "is " + this.totalEmpWage;
         }
     }
 }
