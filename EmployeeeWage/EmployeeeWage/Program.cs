@@ -14,14 +14,13 @@ namespace EmployeeeWage
         public const int ratePerHrs = 20;
         public const int NO_OF_WORKING_DAYS = 20;
         public const int MAX_HRS_IN_MONTH = 100;
-        public static void Main(string[] args)
+        public static int ComputeEmpWage()
         {
 
             int empHrs = 0;
             int totalEmpHrs = 0;
 
             int totalWorkingDays = 0;
-
 
             while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
             {
@@ -52,6 +51,16 @@ namespace EmployeeeWage
             int totalEmpWage = totalEmpHrs * ratePerHrs;
             Console.WriteLine("total Employee wage is :" + totalEmpWage);
             Console.ReadLine();
+            return totalEmpWage;
+
         }
+        static void Main(string[] args)
+        {
+            ComputeEmpWage();
+            Console.ReadLine();
+        }
+
+
     }
+
 }
