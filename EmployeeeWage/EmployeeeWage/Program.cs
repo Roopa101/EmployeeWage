@@ -11,15 +11,12 @@ namespace EmployeeeWage
 
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
-        public const int ratePerHrs = 20;
-        public const int NO_OF_WORKING_DAYS = 20;
-        public const int MAX_HRS_IN_MONTH = 100;
-        public static int ComputeEmpWage()
-        {
 
+        public static int ComputeEmpWage(string company, int ratePerHrs, int NO_OF_WORKING_DAYS, int MAX_HRS_IN_MONTH)
+        {
+            //variables
             int empHrs = 0;
             int totalEmpHrs = 0;
-
             int totalWorkingDays = 0;
 
             while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
@@ -45,18 +42,18 @@ namespace EmployeeeWage
 
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Days:" + totalWorkingDays + "EmpprHr:" + empHrs);
-
             }
 
             int totalEmpWage = totalEmpHrs * ratePerHrs;
-            Console.WriteLine("total Employee wage is :" + totalEmpWage);
-            Console.ReadLine();
+            Console.WriteLine("total Employee wage for company: " + company + " is " + totalEmpWage);
             return totalEmpWage;
 
         }
         static void Main(string[] args)
         {
-            ComputeEmpWage();
+            ComputeEmpWage("DMart", 30, 2, 10);
+            ComputeEmpWage("BridgeLabz", 20, 8, 30);
+            ComputeEmpWage("Reliance", 10, 4, 20);
             Console.ReadLine();
         }
 
